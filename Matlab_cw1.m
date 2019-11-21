@@ -4,6 +4,19 @@
 % Artur Braun 293 300
 % Ma³gorzata Lus 293 316
 
+%% Zad 2
+
+a = 2.5:-0.5:0.5;
+b =(5:-1:1).^2;
+c =(5:-1:1).^(-2:1:2);
+d = (1:1:5).^-(5:-1:1);
+e = a*b';
+
+%% Zad 3
+%
+Ri = (linspace(10,10,6)).^(2:1:7);
+Rz = 1/sum(1./Ri);
+
 %% Zad 4
 %a)
 rlos = rand(11)*5-2;
@@ -12,14 +25,14 @@ Rlos = fix(rlos);
 %c)
 rlosGtRlos = rlos > Rlos;
 %d)
-
+Rlos(1:length(Rlos)+1:end) = -11;
 %e)
-
+srlos = rlos(end:-2:3,2:2:end-1);
 %% Zad 5
 syms x y z
-eqn1 = 3*x+2*y-z==-18;
-eqn2 = 3*x-8*y-7*z==38;
-eqn3 = -22*x+18*y-30*z==6;
+eqn1 = 3*x+2*y-z==18;
+eqn2 = 3*x-8*y-7*z==-38;
+eqn3 = -22*x+18*y-30*z==-6;
 [A,B] = equationsToMatrix([eqn1, eqn2, eqn3], [x, y, z]);
 X = linsolve(A,B);
 
@@ -44,7 +57,7 @@ while(1)
        disp("");
    end
 end
-V = (4/3)*pi*a*b*c;
+V = (2/3)*pi*a*b*c;
 fprintf('Objetosc lewej komory serca o promieniach: a = %f mm, b = %f mm, c = %f mm\nwynosci %f mm szesciennych co odpowiada %f ml\n',...
     a, b, c, V, V); 
 
