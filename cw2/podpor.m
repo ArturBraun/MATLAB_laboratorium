@@ -16,7 +16,7 @@ for i = 2:length(weWspolrzednaZ)- 1
     tmpPoprzedni = weWspolrzednaZ(i-1);
     tmpNastepny = weWspolrzednaZ(i+1);
     
-    if((weWspolrzednaZ(i) < tmpPoprzedni) && (weWspolrzednaZ(i) < tmpNastepny)) 
+    if((weWspolrzednaZ(i) < tmpPoprzedni) && (weWspolrzednaZ(i) < tmpNastepny) && (weWspolrzednaZ(i) < 43)) 
         wyWspolrzednaZ(length(wyWspolrzednaZ)+1) = weWspolrzednaZ(i);
         wyChwileCzasowe(length(wyChwileCzasowe)+1) = weChwileCzasowe(i);
     end

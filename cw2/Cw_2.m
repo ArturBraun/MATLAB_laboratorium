@@ -25,12 +25,12 @@ try
 Pacjent.imie = string(input('Podaj imie: ','s'));
 Pacjent.nazwisko = string(input('Podaj nazwisko: ','s'));
 Pacjent.cisnienieSkurczowe = double(input('Podaj cisnienie skurczowe: '));
-if (Pacjent.cisnienieSkurczowe <= 0)
-    error('LiczbaUjemna');
+if (Pacjent.cisnienieSkurczowe < 70)
+    error('ZaMalaWartosc');
 end
 Pacjent.cisnienieRozkurczowe = double(input('Podaj cisnienie rozkurczowe: '));
-if (Pacjent.cisnienieRozkurczowe <= 0)
-    error('LiczbaUjemna');
+if (Pacjent.cisnienieRozkurczowe < 40)
+    error('ZaMalaWartosc');
 end
 
 if ((Pacjent.cisnienieSkurczowe <= 90) && (Pacjent.cisnienieRozkurczowe <= 60)) 
@@ -48,7 +48,7 @@ else
 end
 
 catch 
-    disp('BLAD -> Wartosc cisnienia musi byc dodatnia!');
+    disp('BLAD -> Za mala wartosc cisnienia!');
 end
 
 %% Zad 2
@@ -91,8 +91,22 @@ catch blad
 end
 
 %% Zad 1
+NumerId =  input('Podaj ID pacjenta: ');
+ocenaNYHA =  double(input('Podaj ocene NYHA: '));
+wymiarLVEDD = double(input('Podaj wymiar LVEDD: '));
+czasQRS = double(input('Podaj czas trwania QRS: '));
+objetoscLVEF = double(input('Podaj objetosc LVEF: '));
 
-
+wynikCrtquaify = crtquaify(ocenaNYHA, wymiarLVEDD, czasQRS, objetoscLVEF);
+if(wynikCrtquaify == false)
+    fprintf('Pacjent %d ma niewydolnosc w skali NYHA rowna %f,\n LVEDD rowny %f mm, czas trwania zespolu QRS rowny %f ms\n i EF rowna %f. Pacjent %s zakwalifikowany do CRT\n\n',...
+    NumerId, ocenaNYHA, wymiarLVEDD, czasQRS, objetoscLVEF,'nie jest');
+elseif (wynikCrtquaify == true)
+    fprintf('Pacjent %d ma niewydolnosc w skali NYHA rowna %f,\n LVEDD rowny %f mm, czas trwania zespolu QRS rowny %f ms\n i EF rowna %f. Pacjent %s zakwalifikowany do CRT\n\n',...
+    NumerId, ocenaNYHA, wymiarLVEDD, czasQRS, objetoscLVEF,'jest');
+else 
+   disp('BLAD -> nieprawidlowe dane'); 
+end
 
 
 
