@@ -1,4 +1,4 @@
-load('phaseI_data1.mat');
+load('phaseI_data2.mat');
 poziomyDawek = cell2mat(phaseI_data(1));
 poziomToksycznosci = cell2mat(phaseI_data(2));
 dawka = poziomyDawek(1);
@@ -27,6 +27,10 @@ while (1)
     elseif (tmp(3) == 1 && tmp(2) == 0)
         %dawka pozostaje na tym samym poziomie -> nic sie nie dzieje
     else
+        dawka = dawka/mnoznik;
+        if iteracja == 1
+           dawka = 0; 
+        end
         break;
     end    
 end
