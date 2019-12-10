@@ -12,7 +12,7 @@ for ii = tt
                                                                                                     
 end 
 
-%F = (4/pi) * sum(1 ./ (2.*k + 1) .* sin((4.*k + 2).*pi.*tt(1:end)./(t(2).*2)),'all');
+%F = (4/pi) * sum(1 ./ (2.*k + 1) .* sin((4.*k + 2).*pi.*tt./(t(2).*2)),'all');
 
 
 end
