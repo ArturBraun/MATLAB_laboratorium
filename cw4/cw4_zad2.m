@@ -3,14 +3,14 @@ clear;
 close;
 
 tic; 
-tabmnoz_a = tabmnoz_a(5);
+tabmnoz_a = tabmnoz_a(200);
 czas_tabmnoz_a = toc
 
 tic; 
-tabmnoz_b = tabmnoz_b(5);
+tabmnoz_b = tabmnoz_b(200);
 czas_tabmnoz_b = toc
 
-czas_tabmnoz_a - czas_tabmnoz_b
+czas_tabmnoz_b / czas_tabmnoz_a
 
 %% Uzyskanie wykresu
 clear;
