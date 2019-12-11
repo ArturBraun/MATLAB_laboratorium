@@ -15,4 +15,8 @@ end
 %F = (4/pi) * sum(1 ./ (2.*k + 1) .* sin((4.*k + 2).*pi.*tt./(t(2).*2)),'all');
 
 
+
+% suma = @(ttt) (4/pi) * sum(1 ./ (2.*k + 1) .* sin((4.*k + 2).*pi.*ttt./(t(2).*2)),'all');
+% F = arrayfun(suma,tt);
+
 end

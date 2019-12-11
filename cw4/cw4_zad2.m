@@ -17,14 +17,12 @@ clear;
 close;
 
 czas_a = zeros(1,200);
+czas_b = zeros(1,200);
 for i=1:200
     tic;
     tabmnoz_a(i);
     czas_a(i) = toc;
-end
-
-czas_b = zeros(1,200);
-for i=1:200
+    
     tic;
     tabmnoz_b(i);
     czas_b(i) = toc;
@@ -37,7 +35,7 @@ plot(1:200,czas_b,'m');
 title('czas(N)');
 xlabel('N');
 ylabel('czas');
-legend('petla for', 'bez petli');
+%legend('petla for', 'bez petli');
 hold off;
 
 
