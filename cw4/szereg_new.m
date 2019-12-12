@@ -57,9 +57,11 @@ end
 
 for i=1:nmin
     tic;
+    %for licznik = 1:1000
     %F = szeregF([-1.1 1.1], dt, i);
     F = szereg_opt([-1.1 1.1], dt, i);
-    czasOstatniegoWywolania = toc;
+    %end
+    czasOstatniegoWywolania = toc/1000;
     
     plot(t,prostsyg,t,F);
     pause(0.1);
@@ -76,7 +78,7 @@ end
 function prostsyg = prostokat(t, delta_t)
 
 tt = t(1):delta_t:t(2);
-prostsyg = sign(sin(tt));
+prostsyg = sign(sin(2*pi*tt));
 
 end
 
@@ -90,7 +92,7 @@ F = zeros(size(tt));
 for ii = tt                                                 
   i = i + 1;                                                                                                             
   for k = N                                                 
-    F(i) = F(i) + 1 / (2*k + 1) * sin(2*(2*k + 1)*pi*ii/(t(2)*2));
+    F(i) = F(i) + 1 / (2*k + 1) * sin(2*(2*k + 1)*pi*ii);
   end                                                             
   F(i) = F(i) * 4/pi;                                           
 end                                                                

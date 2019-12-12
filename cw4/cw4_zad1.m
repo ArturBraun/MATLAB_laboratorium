@@ -15,36 +15,42 @@ for N = 100:100:1000
 
     % Podpunkt c -> porzadek wierszowy
     tic;
-    for rzad = 1:N
-        for kolumna = 1:N
-           if B(rzad,kolumna) > 0.5
-               B(rzad,kolumna) = 1;
-           end
+    for licznik = 1:1000
+        for rzad = 1:N
+            for kolumna = 1:N
+               if B(rzad,kolumna) > 0.5
+                   B(rzad,kolumna) = 1;
+               end
+            end
         end
     end
-    czas_c(N/100) = toc;
+    czas_c(N/100) = toc/1000;
 
     % Podpunkt d
     C = A;
 
     % Podpunkt e -> porzadek kolumnowy
     tic;
-    for kolumna = 1:N
-       for rzad = 1:N
-          if C(rzad,kolumna) > 0.5
-               C(rzad,kolumna) = 1;
-          end
-       end
+    for licznik = 1:1000
+        for kolumna = 1:N
+           for rzad = 1:N
+              if C(rzad,kolumna) > 0.5
+                   C(rzad,kolumna) = 1;
+              end
+           end
+        end
     end
-    czas_e(N/100) = toc;
+    czas_e(N/100) = toc/1000;
 
     % Podpunkt f
     D = A;
 
     % Podpunkt g
     tic;
-    D(D>0.5) = 1;
-    czas_g(N/100) = toc;
+    for licznik = 1:1000
+        D(D>0.5) = 1;
+    end
+    czas_g(N/100) = toc/1000;
     
     % Wspolczynnik poprawy efektywnosci kodu    
     % wpolczynnik e/c

@@ -20,12 +20,16 @@ czas_a = zeros(1,200);
 czas_b = zeros(1,200);
 for i=1:200
     tic;
+    for licznik = 1:1000
     tabmnoz_a(i);
-    czas_a(i) = toc;
+    end
+    czas_a(i) = toc/1000;
     
     tic;
+    for licznik = 1:1000
     tabmnoz_b(i);
-    czas_b(i) = toc;
+    end
+    czas_b(i) = toc/1000;
 end
 
 figure(1);
